@@ -38,8 +38,8 @@
 <div *ngIf="showsignupform">
     <div class="row">
         <div class="col p-5 m-5">
-            <div class="px-3 py-4 border bg-light ">
-                <div class="p-3 mb-5 border bg-dark rounded-pill text-warning text-center">
+            <div class="px-3 py-4 border bg-info ">
+                <div class="p-3 mb-5 border bg-dark rounded-pill text-white  text-center">
                     <h1>Signup Form</h1>
                 </div>
                 <form [formGroup]="signupForm" (ngSubmit)="collectData()">
@@ -55,7 +55,7 @@
                         <label for="password" class="col-sm-3 col-form-label mb-2 mx-3">Password :</label>
                             <div class="col-sm-7">
                                 <input type="password" class="form-control mt-1" name="password"
-                                    formControlName="password" maxlength="25" placeholder="Enter College Name">
+                                    formControlName="password" maxlength="25" placeholder="Enter Password">
                             </div>
                     </div>
                     <div class="row mb-3">
@@ -79,7 +79,7 @@
                                     formControlName="mobile" placeholder="Enter Mobile Number">
                             </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mx-3 mt-4 ">Sign In</button>
+                    <button type="submit" class="btn btn-success mx-3 mt-4 ">Sign In</button>
                 </form>
             </div>
         </div>
