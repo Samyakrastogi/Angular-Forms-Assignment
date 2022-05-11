@@ -1,0 +1,105 @@
+<!-- FORM -->
+<div>
+  <div class="row">
+    <div class="col p-5 m-5">
+      <div class="px-3 py-4 border bg-light ">
+        <div class="p-3 mb-5 border bg-dark rounded-pill text-warning text-center">
+          <h1>Form</h1>
+        </div>
+        <form #userForm="ngForm" (ngSubmit)="submitdata(userForm)">
+          <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-3 col-form-label mb-2 mx-3">Name :</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control mt-1" name="username" #username="ngModel" required maxlength="20"
+                ngModel id="inputname" placeholder="Enter Your Name">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">College :</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control mt-1" name="college" #college="ngModel" required maxlength="40"
+                ngModel id="inputcollege" placeholder="Enter College Name">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">CGPA :</label>
+            <div class="col-sm-7">
+              <input type="number" class="form-control mt-1" name="cgpa" #cgpa="ngModel" required max="10" ngModel
+                id="inputcgpa" placeholder="Enter CGPA out of 10">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Year of Passing :</label>
+            <div class="col-sm-7">
+              <input type="number" class="form-control mt-2" name="year" #year="ngModel" required maxlength="4"
+                max="2025" min="1990" ngModel id="inputyear" placeholder="Enter Year">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Date of Joining :</label>
+            <div class="col-sm-7">
+              <input type="date" class="form-control mt-2" name="doj" #doj="ngModel" required ngModel id="inputdate"
+                placeholder="Enter Date">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Skills :</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control mt-1" name="skills" #skills="ngModel" required maxlength="100"
+                ngModel id="inputskills" placeholder="Enter Your Skills">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Upload Resume :</label>
+            <div class="col-sm-7 mt-2">
+              <input type="file" accept=".pdf" class="form-control" name="file" #file="ngModel" required ngModel
+                id="inputfile">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary mx-3 mt-4 ">Submit</button>
+          <div *ngIf="submitted" class="d-inline">
+            <button type="reset" class="btn btn-primary mx-3 mt-4">Reset</button>
+            <button type="submit" class="btn btn-primary mx-3 mt-4" (click)="adddata(userForm)">Add</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- table -->
+    <div *ngIf="display_table">
+      <div class="col m-5 p-5">
+        <div class="p-5 border bg-light" id="sec-tabs">
+          <div class="p-3 mb-5 border rounded-pill bg-dark text-warning text-center">
+            <h1>Table</h1>
+          </div>
+          <div id="tablediv">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">College</th>
+                  <th scope="col">CGPA</th>
+                  <th scope="col">Passing year</th>
+                  <th scope="col">Joining Date</th>
+                  <th scope="col">Skills</th>
+                  <th scope="col">Resume</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let element of array ">
+                  <td *ngFor="let items of element">
+                    {{items}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

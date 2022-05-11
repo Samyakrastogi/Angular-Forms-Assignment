@@ -1,0 +1,119 @@
+<!-- LOGIN FORM -->
+<div *ngIf="showloginform">
+    <div class="row">
+        <div class="col p-5 m-5">
+            <div class="px-3 py-4 border bg-light ">
+                <div class="p-3 mb-5 border bg-dark rounded-pill text-warning text-center">
+                    <h1>Login Form</h1>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="submitData()">
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label mb-2 mx-3">User Name:</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control mt-1" name="usernames" formControlName="usernames"
+                                maxlength="20" placeholder="Enter Your Name">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Password :</label>
+                        <div class="col-sm-7">
+                            <input type="password" class="form-control mt-1" name="passwords" formControlName="passwords"
+                                maxlength="25" placeholder="Enter Your Password">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mx-3 mt-4 ">Submit</button>
+                    <button type="button" class="btn btn-primary mx-3 mt-4" (click)="showSignupForm()" >Signup</button>
+                    <div *ngIf="submitted" class="d-inline">
+                        <button type="reset" class="btn btn-primary mx-3 mt-4">Reset</button>
+                        <button type="submit" class="btn btn-primary mx-3 mt-4" (click)="adddata()">Add</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+</div></div>
+
+        <!-- Signup Form -->
+<div *ngIf="showsignupform">
+    <div class="row">
+        <div class="col p-5 m-5">
+            <div class="px-3 py-4 border bg-light ">
+                <div class="p-3 mb-5 border bg-dark rounded-pill text-warning text-center">
+                    <h1>Signup Form</h1>
+                </div>
+                <form [formGroup]="signupForm" (ngSubmit)="collectData()">
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label mb-2 mx-3">User Name:</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control mt-1" name="username"
+                                    formControlName="username" maxlength="20" placeholder="Enter Your Name">
+                            </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Password :</label>
+                            <div class="col-sm-7">
+                                <input type="password" class="form-control mt-1" name="password"
+                                    formControlName="password" maxlength="25" placeholder="Enter College Name">
+                            </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Father's Name :</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control mt-1" name="father" formControlName="father"
+                                    maxlength="20" placeholder="Enter Father's Name">
+                            </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Email :</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control mt-2" name="email" formControlName="email"
+                                    placeholder="Enter Your Email">
+                            </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Mobile Number :</label>
+                            <div class="col-sm-7">
+                                <input type="number" class="form-control mt-2" name="mobile"
+                                    formControlName="mobile" placeholder="Enter Mobile Number">
+                            </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mx-3 mt-4 " >Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+                
+<!-- TABLE -->
+
+<div *ngIf="display_table">
+    <div class="col m-5 p-5">
+      <div class="p-5 border bg-light" id="sec-tabs">
+        <div class="p-3 mb-5 border rounded-pill bg-dark text-warning text-center">
+          <h1>Table</h1>
+        </div>
+        <div id="tablediv">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Password</th>
+                <th scope="col">Father's Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let element of userarray ">
+                <td *ngFor="let items of element">
+                  {{items}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
