@@ -2,66 +2,66 @@
 <div>
   <div class="row">
     <div class="col p-5 m-5">
-      <div class="px-3 py-4 border bg-light ">
-        <div class="p-3 mb-5 border bg-dark rounded-pill text-warning text-center">
+      <div class="px-3 py-4 border border-light border-3 bg-dark ">
+        <div class="p-3 mb-5 bg-info rounded-pill text-danger text-center">
           <h1>Form</h1>
         </div>
         <form #userForm="ngForm" (ngSubmit)="submitdata(userForm)">
           <div class="row mb-3">
-            <label for="inputEmail3" class="col-sm-3 col-form-label mb-2 mx-3">Name :</label>
+            <label for="Name" class="col-sm-3 col-form-label mb-2 mx-3 text-light">Name :</label>
             <div class="col-sm-7">
               <input type="text" class="form-control mt-1" name="username" #username="ngModel" required maxlength="20"
-                ngModel id="inputname" placeholder="Enter Your Name">
+                ngModel id="name" placeholder="Enter Name">
             </div>
           </div>
 
           <div class="row mb-3">
-            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">College :</label>
+            <label for="College" class="col-sm-3 col-form-label mb-2 mx-3 text-light">College :</label>
             <div class="col-sm-7">
               <input type="text" class="form-control mt-1" name="college" #college="ngModel" required maxlength="40"
-                ngModel id="inputcollege" placeholder="Enter College Name">
+                ngModel id="college" placeholder="Enter College Name">
             </div>
           </div>
           <div class="row mb-3">
-            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">CGPA :</label>
+            <label for="CGPA" class="col-sm-3 col-form-label mb-2 mx-3 text-light">CGPA :</label>
             <div class="col-sm-7">
               <input type="number" class="form-control mt-1" name="cgpa" #cgpa="ngModel" required max="10" ngModel
-                id="inputcgpa" placeholder="Enter CGPA out of 10">
+                id="cgpa" placeholder="Enter Your CGPA">
             </div>
           </div>
           <div class="row mb-3">
-            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Year of Passing :</label>
+            <label for="passingyear" class="col-sm-3 col-form-label mb-2 mx-3 text-light">Year of Passing :</label>
             <div class="col-sm-7">
-              <input type="number" class="form-control mt-2" name="year" #year="ngModel" required maxlength="4"
-                max="2025" min="1990" ngModel id="inputyear" placeholder="Enter Year">
+              <input type="number" class="form-control mt-2" name="passingyear" #year="ngModel" required maxlength="4"
+                max="2025" min="1990" ngModel id="passingyear" placeholder="Enter Year Of Graduation">
             </div>
           </div>
           <div class="row mb-3">
-            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Date of Joining :</label>
+            <label for="joiningdate" class="col-sm-3 col-form-label mb-2 mx-3 text-light">Date of Joining :</label>
             <div class="col-sm-7">
-              <input type="date" class="form-control mt-2" name="doj" #doj="ngModel" required ngModel id="inputdate"
+              <input type="date" class="form-control mt-2" name="joiningdate" #doj="ngModel" required ngModel id="date"
                 placeholder="Enter Date">
             </div>
           </div>
           <div class="row mb-3">
-            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Skills :</label>
+            <label for="skills" class="col-sm-3 col-form-label mb-2 mx-3 text-light">Skills :</label>
             <div class="col-sm-7">
               <input type="text" class="form-control mt-1" name="skills" #skills="ngModel" required maxlength="100"
-                ngModel id="inputskills" placeholder="Enter Your Skills">
+                ngModel id="skills" placeholder="Enter Your Skill Set">
             </div>
           </div>
 
           <div class="row mb-3">
-            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3">Upload Resume :</label>
+            <label for="inputPassword3" class="col-sm-3 col-form-label mb-2 mx-3 text-light">Upload Resume :</label>
             <div class="col-sm-7 mt-2">
               <input type="file" accept=".pdf" class="form-control" name="file" #file="ngModel" required ngModel
-                id="inputfile">
+                id="file">
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary mx-3 mt-4 ">Submit</button>
+          <button type="submit" class="btn btn-success mx-3 mt-4  ">Submit</button>
           <div *ngIf="submitted" class="d-inline">
-            <button type="reset" class="btn btn-primary mx-3 mt-4">Reset</button>
+            <button type="reset" class="btn btn-danger mx-3 mt-4">Reset</button>
             <button type="submit" class="btn btn-primary mx-3 mt-4" (click)="adddata(userForm)">Add</button>
           </div>
 
@@ -72,8 +72,8 @@
     <!-- table -->
     <div *ngIf="display_table">
       <div class="col m-5 p-5">
-        <div class="p-5 border bg-light" id="sec-tabs">
-          <div class="p-3 mb-5 border rounded-pill bg-dark text-warning text-center">
+        <div class="p-5 border bg-light" id="tablesection">
+          <div class="p-3 mb-5 border rounded-pill bg-info text-danger text-center">
             <h1>Table</h1>
           </div>
           <div id="tablediv">
